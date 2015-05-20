@@ -1,9 +1,9 @@
 <?php
-require('Process/config.php');
+require('process/config.php');
 require('class/Image.php');
 include('admin/beginning.html');
 require('admin/menu.php');
-require('Process/process_image.php');
+require('process/process_image.php');
 
 if (!empty($_FILES)) {
     $image = new Image();

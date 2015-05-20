@@ -1,9 +1,9 @@
 <?php
-require('Process/config.php');
-require('class/Image.php');
-require('Process/process_image.php');
+require('../process/config.php');
+require('../class/Image.php');
+require('../process/process_image.php');
 $image = new Image();
-$images_data = $image->getImages();
+$images_data = $image->getImages(IMAGE_DIR_PATH);
 require('beginning.html');
 ?>
 <h1><?php echo WEB_TITLE ?></h1>
@@ -14,7 +14,7 @@ require('beginning.html');
             <form method="post" action="">
                 <p>Titre : <input type="text" name="title" value="<?php echo $image['title'] ?>"/></p>
                 <?php if (empty ($image['title'])): ?>
-                    <input type="hidden" name="newentry" value="1">
+                    <input type="hidden" name="noentry" value="1">
                 <?php endif ?>
                 <input type="hidden" name="filename" value="<?php echo $image['filename'] ?>"/>
 
