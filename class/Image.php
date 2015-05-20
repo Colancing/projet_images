@@ -9,17 +9,16 @@ class Image
     public function getImages($image_dir)
     {
         $i = 0;
+//        /Applications/MAMP/htdocs/php_avance/projet_images/images
         if ($handle = opendir($image_dir)) {
             while (false !== ($entry = readdir($handle))) {
+//                problème -> $entry renvoie '.'
                 if ($entry != '.' && $entry != '..') {
                     $i++;
                     $images[$i]['filename'] = $entry;
                     $image_data = $this->GetImageData($entry);
                     $images[$i]['title'] = $image_data['title'];
                     $images[$i]['description'] = $image_data['description'];
-                } else {
-                    $msg = $this->GetImageData($entry);
-                    return $msg;
                 }
             }
             closedir($handle) ;
