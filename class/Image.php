@@ -86,7 +86,7 @@ function UpdateImageData($title, $description, $filename)
         exit();
     } else {
         if (!$mysqli->query('UPDATE images SET title=" ' . $title . '" , description = " ' . $description . '"
-            WHERE filename = " ' . $filename . '"')
+            WHERE filename = "' . $filename . '"')
         ) {
             $msg = 'Une erreur est survenue lors de la mise à jour des données dans la base. <br/>
 Le Message d\'erreur est :' . $mysqli->error;
