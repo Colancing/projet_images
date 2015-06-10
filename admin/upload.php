@@ -1,19 +1,19 @@
 <?php
-require('process/config.php');
-require('class/Image.php');
-include('admin/beginning.html');
-require('admin/menu.php');
-require('process/process_image.php');
+require('../process/config.php');
+require('../class/Image.php');
+include('beginning.html');
+require('menu.php');
+require('../process/process_image.php');
 
-if (!empty($_FILES)) {
-    $image = new Image();
-    $images = $image->upload($_FILES);
-    if ($images === true) {
-        $msg_success = "Le chargement a réussi";
-    } else {
-        $msg_error = "Le chargement a échoué";
-    }
-}
+//if (!empty($_FILES)) {
+//    $image = new Image();
+//    $images = $image->upload($_FILES);
+//    if ($images === true) {
+//        $msg_success = "Le chargement a réussi";
+//    } else {
+//        $msg_error = "Le chargement a échoué";
+//    }
+//}
 ?>
     <h1>Upload</h1>
 <?php if (isset($msg_success)) : ?>
