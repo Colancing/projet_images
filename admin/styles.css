@@ -2,7 +2,7 @@ li {
     list-style: none;
 }
 
-.msg {
+.msg_error {
     position: absolute;
     left: 50%;
     Top: 50px;
@@ -12,4 +12,16 @@ li {
     color: white;
     border: thick solid darkgray;
     background-color: red;
+}
+
+.msg_success {
+    position: absolute;
+    left: 50%;
+    Top: 50px;
+    padding: 5px;
+    width: auto;
+    height: auto;
+    color: black;
+    border: thick solid darkgray;
+    background-color: green;
 }
