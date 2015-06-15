@@ -40,8 +40,8 @@ class Image
             $result = $mysqli->query('SELECT * FROM images WHERE filename ="' . $filename . '"');
 //SI il n'y a pas de donnée dans la BDD correspondant à $filename
             if (!$result) {
-                echo 'Aucune donnée concernant cette image dans la base de donnée n\'a été récupérée :' . $mysqli->error;
-                return false;
+                $msg_error = 'Aucune donnée concernant cette image dans la base de donnée n\'a été récupérée :' . $mysqli->error;
+                return $msg_error;
             } else {
                 //Si il y a des données correspondant à ce filename on les récupère dans le tableau $image data
 
@@ -61,17 +61,16 @@ class Image
         $mysqli = new mysqli ('localhost', 'root', 'root', 'projet_images');
         $mysqli->set_charset("utf8");
         if ($mysqli->connect_errno) {
-            $msg = 'Echec de connexion à la base de donnée' . $mysqli->connect_errno;
-            return $msg;
+            $msg_error = 'Echec de connexion à la base de donnée' . $mysqli->connect_errno;
+            return $msg_error;
             exit();
         } else {
             if (!$mysqli->query('INSERT INTO images (title, description, filename) VALUES ("' . $title . '"," ' . $description . ' ","' . $filename . '")')) {
-                $msg = 'Une erreur est survenue lors de l\'insertion des données dans la base. <br/>
-Le Message d\'erreur est :' . $mysqli->error;
-                return $msg;
+                $msg_error = 'Problème lors de l\'insertion de l\'image. Erreur :' . $mysqli->error;
+                return $msg_error;
             } else {
-                $msg = 'Une nouvelle entrée a bien été crée dans la base de donnée';
-                return $msg;
+                $msg_success = 'Une nouvelle entrée a bien été crée dans la base de donnée';
+                return $msg_success;
                 $mysqli->close();
             }
         }
@@ -83,19 +82,17 @@ Le Message d\'erreur est :' . $mysqli->error;
         $mysqli = new mysqli ('localhost', 'root', 'root', 'projet_images');
         $mysqli->set_charset("utf8");
         if ($mysqli->connect_errno) {
-            $msg = 'Echec de connexion à la base de donnée' . $mysqli->connect_errno;
-            return $msg;
+            $msg_error = 'Echec de connexion à la base de donnée. Erreur :' . $mysqli->error;
+            return $msg_error;
             exit();
         } else {
             if (!$mysqli->query('UPDATE images SET title=" ' . $title . '" , description = " ' . $description . '"
             WHERE filename = "' . $filename . '"')
             ) {
-                $msg = 'Une erreur est survenue lors de la mise à jour des données dans la base. <br/>
-Le Message d\'erreur est :' . $mysqli->error;
-                return $msg;
+                $msg_error = 'Problème de mise à jour dans la base de donnée. Erreur :' . $mysqli->error;
+                return $msg_error;
             } else {
-                $msg = 'La mise à jour a bien été effectuée dans la base de donnée.';
-                return $msg;
+                return true;
                 $mysqli->close();
             }
         }

@@ -1,0 +1,29 @@
+h1 {
+    color: blue;
+}
+
+li {
+    list-style: none;
+}
+
+.msg, .msg_error, .msg_success {
+    margin-left: 50%;
+    margin-top: 50px;
+    padding: 5px;
+    width: auto;
+    height: auto;
+}
+
+.msg_error {
+    color: white;
+    border: thick solid darkgray;
+    background-color: red;
+}
+
+.msg_success {
+    color: black;
+    border: thick solid darkgray;
+    background-color: green;
+}
+
+/*# sourceMappingURL=styles.css.map */
