@@ -1,5 +1,5 @@
 h1 {
-    color: darkslategrey;
+    color: blue;
 }
 
 li {
@@ -7,9 +7,8 @@ li {
 }
 
 .msg, .msg_error, .msg_success {
-    position: absolute;
-    left: 50%;
-    Top: 50px;
+    margin-left: 50%;
+    margin-top: 50px;
     padding: 5px;
     width: auto;
     height: auto;

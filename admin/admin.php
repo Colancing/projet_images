@@ -7,8 +7,13 @@ $images_data = $image->getImages(IMAGE_DIR_PATH);
 require('beginning.html');
 ?>
     <h1><?php echo WEB_TITLE ?></h1>
-<?php if (isset($msg)) { ?>
-    <div class="msg"><?php echo $msg ?></div>
+<?php if (isset($msg_error)) { ?>
+    <div class="msg_error"><?php echo $msg_error ?></div>
+<?php
+}
+?>
+<?php if (isset($msg_success)) { ?>
+    <div class="msg_success"><?php echo $msg_success ?></div>
 <?php
 }
 ?>
