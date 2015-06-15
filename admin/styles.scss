@@ -1,0 +1,30 @@
+h1 {
+  color: blue;
+}
+
+li {
+  list-style: none;
+}
+
+.msg {
+  position: absolute;
+  left: 50%;
+  Top: 50px;
+  padding: 5px;
+  width: auto;
+  height: auto;
+}
+
+.msg_error {
+  @extend .msg;
+  color: white;
+  border: thick solid darkgray;
+  background-color: red;
+}
+
+.msg_success {
+  @extend .msg;
+  color: black;
+  border: thick solid darkgray;
+  background-color: green;
+}

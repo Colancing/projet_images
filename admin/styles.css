@@ -1,0 +1,30 @@
+h1 {
+    color: darkslategrey;
+}
+
+li {
+    list-style: none;
+}
+
+.msg, .msg_error, .msg_success {
+    position: absolute;
+    left: 50%;
+    Top: 50px;
+    padding: 5px;
+    width: auto;
+    height: auto;
+}
+
+.msg_error {
+    color: white;
+    border: thick solid darkgray;
+    background-color: red;
+}
+
+.msg_success {
+    color: black;
+    border: thick solid darkgray;
+    background-color: green;
+}
+
+/*# sourceMappingURL=styles.css.map */

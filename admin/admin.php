@@ -6,7 +6,12 @@ $image = new Image();
 $images_data = $image->getImages(IMAGE_DIR_PATH);
 require('beginning.html');
 ?>
-<h1><?php echo WEB_TITLE ?></h1>
+    <h1><?php echo WEB_TITLE ?></h1>
+<?php if (isset($msg)) { ?>
+    <div class="msg"><?php echo $msg ?></div>
+<?php
+}
+?>
 <ul>
     <?php foreach ($images_data as $image) : ?>
         <li><img src="<?php echo IMAGE_DIR_URL . '/' . $image['filename'] ?>"/>
@@ -24,10 +29,6 @@ require('beginning.html');
                 <p><input type="submit" name="formImageSubmit" value="validez"/></p>
             </form>
         </li>
-    <?php endforeach;
-    if (isset($msg)) { ?>
-        <div class="msg"><?php echo $msg ?></div>
-    <?php }
-    ?>
+    <?php endforeach; ?>
 </ul>
 <?php require('ending.html') ?>
